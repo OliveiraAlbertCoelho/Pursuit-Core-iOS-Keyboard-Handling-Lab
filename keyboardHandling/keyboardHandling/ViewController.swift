@@ -41,10 +41,10 @@ class ViewController: UIViewController {
     @objc  func keyboardWillChange(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if userNameText.isFirstResponder {
-                self.view.frame.origin.y  -= keyboardSize.height
+                self.view.frame.origin.y  = -keyboardSize.height
             }
             if passwordText.isFirstResponder {
-                self.view.frame.origin.y -= keyboardSize.height
+                self.view.frame.origin.y = -keyboardSize.height
             }
         }
     }
